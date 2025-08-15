@@ -1,0 +1,37 @@
+{
+  "name": "auto-reject-issues",
+  "version": "1.0.0",
+  "description": "GitHub Action to automatically reject and close issues with dismissive comments",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "package": "ncc build src/main.ts -o dist --source-map --license licenses.txt",
+    "release": "node scripts/release.js",
+    "changeset": "changeset"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ernestmccarter/auto-reject-issues.git"
+  },
+  "keywords": [
+    "github",
+    "action",
+    "issues",
+    "automation",
+    "reject"
+  ],
+  "author": "Ernest McCarter",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "@actions/exec": "^1.1.1",
+    "@changesets/cli": "^2.27.1",
+    "@types/node": "^20.11.24",
+    "@vercel/ncc": "^0.38.1",
+    "typescript": "^5.4.2"
+  }
+}

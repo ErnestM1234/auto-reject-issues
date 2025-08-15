@@ -1,0 +1,20 @@
+name: 'Auto Reject Issues'
+description: 'Automatically close and reject ALL GitHub issues with random dismissive comments'
+author: 'Ernest McCarter'
+
+inputs:
+  github-token:
+    description: 'GitHub token for authentication'
+    required: true
+  closing-statements:
+    description: 'Comma-separated list of closing statements to randomly choose from'
+    required: false
+    default: 'nah,not happening,rejected,no thanks,pass'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'x-circle'
+  color: 'red'
