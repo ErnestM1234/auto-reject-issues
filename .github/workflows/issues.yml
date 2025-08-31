@@ -1,7 +1,7 @@
 name: Issue handler
 on:
-  release:
-    types: [published]
+  issues:
+    types: [opened]
 jobs:
   auto-reject:
     runs-on: ubuntu-latest

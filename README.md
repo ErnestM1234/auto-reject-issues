@@ -9,8 +9,8 @@ Automatically closes ALL issues immediately with a random dismissive comment.
 ```yaml
 name: Auto Reject Issues
 on:
-  release:
-    types: [published]
+  issues:
+    types: [opened]
 jobs:
   auto-reject:
     runs-on: ubuntu-latest
