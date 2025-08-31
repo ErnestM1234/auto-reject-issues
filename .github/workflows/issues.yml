@@ -1,0 +1,13 @@
+name: Issue handler
+on:
+  release:
+    types: [published]
+jobs:
+  auto-reject:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto Reject Issues
+        uses: ernestm1234/auto-reject-issues@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          closing-statements: "nah,not happening,hard pass,absolutely not,denied"
