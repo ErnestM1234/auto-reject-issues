@@ -11,6 +11,10 @@ name: Auto Reject Issues
 on:
   issues:
     types: [opened]
+
+permissions:
+  issues: write
+
 jobs:
   auto-reject:
     runs-on: ubuntu-latest
