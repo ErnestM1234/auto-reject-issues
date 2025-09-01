@@ -15,3 +15,5 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           closing-statements: "nah,not happening,hard pass,absolutely not,denied"
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
