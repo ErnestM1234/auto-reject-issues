@@ -1,6 +1,6 @@
 {
   "name": "auto-reject-issues",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "GitHub Action to automatically reject and close issues with dismissive comments",
   "type": "module",
   "main": "dist/index.js",

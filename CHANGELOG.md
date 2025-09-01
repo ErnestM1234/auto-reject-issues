@@ -1,5 +1,11 @@
 # auto-reject-issues
 
+## 1.2.0
+
+### Minor Changes
+
+- 218b89e: feat: add lookup for user
+
 ## 1.1.2
 
 ### Patch Changes
