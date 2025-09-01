@@ -1,5 +1,11 @@
 # auto-reject-issues
 
+## 1.2.1
+
+### Patch Changes
+
+- 005f2b5: fix: make more funny
+
 ## 1.2.0
 
 ### Minor Changes
