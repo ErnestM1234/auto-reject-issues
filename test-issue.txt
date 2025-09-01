@@ -1,0 +1,14 @@
+Title: Bug: Auto-reject workflow not triggering on new issues
+
+Body:
+I noticed that when I create new issues, the auto-reject workflow doesn't seem to be running. The workflow file seems to be configured correctly but maybe there's a permissions issue or something else going wrong.
+
+Steps to reproduce:
+1. Create a new issue
+2. Wait for auto-reject workflow to trigger
+3. Nothing happens
+
+Expected: Issue should be immediately closed with a dismissive comment
+Actual: Issue stays open
+
+Can someone look into this?
