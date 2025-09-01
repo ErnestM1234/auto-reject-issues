@@ -44,7 +44,9 @@ async function run(): Promise<void> {
     console.log("DEBUG: OPENAI_API_KEY exists:", !!process.env.OPENAI_API_KEY);
 
     if (process.env.OPENAI_API_KEY) {
-      console.log("DEBUG: OPENAI_API_KEY found, attempting to generate AI comment");
+      console.log(
+        "DEBUG: OPENAI_API_KEY found, attempting to generate AI comment"
+      );
       try {
         randomComment = await send(
           `Title: ${issue.title}\nBody: ${
@@ -64,7 +66,7 @@ async function run(): Promise<void> {
     } else {
       console.log("DEBUG: No OPENAI_API_KEY found, using fallback");
     }
-    
+
     if (randomComment === undefined) {
       console.log("DEBUG: Using fallback random comment");
       randomComment =
