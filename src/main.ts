@@ -1,6 +1,7 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
 import { send } from "./response.js";
+import { getUserStats, formatUserStatsForPrompt } from "./userStats.js";
 
 async function run(): Promise<void> {
   try {
@@ -32,6 +33,10 @@ async function run(): Promise<void> {
       return;
     }
 
+    // Get user stats for personalized roasting
+    const userStats = await getUserStats(octokit, issue.user.login);
+    const userStatsText = formatUserStatsForPrompt(userStats);
+
     // Select a random closing statement or use OpenAI API if available
     let randomComment: string | undefined;
 
@@ -44,7 +49,7 @@ async function run(): Promise<void> {
         randomComment = await send(
           `Title: ${issue.title}\nBody: ${
             issue.body || "No description provided"
-          }`
+          }\n${userStatsText}`
         );
         console.log("DEBUG: AI comment generated successfully:", randomComment);
         core.info("Generated rejection comment using OpenAI API");
