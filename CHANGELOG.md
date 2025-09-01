@@ -1,5 +1,11 @@
 # auto-reject-issues
 
+## 1.1.1
+
+### Patch Changes
+
+- d1dbd43: chore: debug
+
 ## 1.1.0
 
 ### Minor Changes
