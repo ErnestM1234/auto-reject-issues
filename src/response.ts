@@ -15,17 +15,21 @@ const PROMPT_PREFIX =
 
 export async function send(prompt: string): Promise<string> {
   try {
+    console.log("DEBUG: Checking for OPENAI_API_KEY...");
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
+      console.log("DEBUG: OPENAI_API_KEY not found in environment");
       throw new Error("OPENAI_API_KEY environment variable is not set");
     }
+    console.log("DEBUG: OPENAI_API_KEY found, initializing OpenAI client");
 
     const openai = new OpenAI({
       apiKey: apiKey,
     });
 
+    console.log("DEBUG: Sending request to OpenAI with prompt:", prompt);
     const response = await openai.chat.completions.create({
-      model: "gpt-5",
+      model: "gpt-4",
       max_tokens: 100,
       messages: [
         {
@@ -39,8 +43,10 @@ export async function send(prompt: string): Promise<string> {
       ],
     });
 
+    console.log("DEBUG: OpenAI response received:", response.choices[0]?.message?.content);
     return response.choices[0]?.message?.content || "nah";
   } catch (error) {
+    console.log("DEBUG: Error in send function:", error instanceof Error ? error.message : "Unknown error");
     throw new Error(
       `Failed to generate rejection comment: ${
         error instanceof Error ? error.message : "Unknown error"
