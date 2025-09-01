@@ -30,16 +30,7 @@ export async function send(prompt: string): Promise<string> {
     console.log("DEBUG: Sending request to OpenAI with prompt:", prompt);
     const response = await openai.responses.create({
       model: "gpt-5",
-      input: [
-        {
-          role: "system",
-          content: SYSTEM_MESSAGE,
-        },
-        {
-          role: "user",
-          content: PROMPT_PREFIX + prompt,
-        },
-      ],
+      input: SYSTEM_MESSAGE + "\n\n" + PROMPT_PREFIX + prompt,
     });
 
     console.log("DEBUG: OpenAI response received:", response.output_text);
