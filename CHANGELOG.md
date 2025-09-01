@@ -1,5 +1,11 @@
 # auto-reject-issues
 
+## 1.1.2
+
+### Patch Changes
+
+- 420a204: fix: syntax
+
 ## 1.1.1
 
 ### Patch Changes
