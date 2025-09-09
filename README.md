@@ -4,6 +4,8 @@ Sometimes your repo needs a bouncer that rejects EVERYONE.
 
 Automatically closes ALL issues immediately with a random dismissive comment.
 
+I like to call this Sass As A Service (SAAS).
+
 ## Usage
 
 ```yaml
